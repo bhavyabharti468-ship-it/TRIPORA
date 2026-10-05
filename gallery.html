@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Travel Gallery | Tripora</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+    <div class="logo">TRIPORA</div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="destinations.html">Discover</a>
+        <a href="packages.html">Packages</a>
+        <a href="hotels.html">Hotels</a>
+        <a href="flights.html">Flights</a>
+        <a href="itinerary.html">My Trip</a>
+    </nav>
+
+    <div class="nav-actions">
+        <span id="navUser"></span>
+        <a href="login.html" id="navLogin">Login</a>
+        <a href="register.html" class="nav-btn">Get Started</a>
+    </div>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="gallery-hero">
+
+    <div class="gallery-hero-content">
+
+        <span class="section-tag">TRAVEL GALLERY</span>
+
+        <h1>See the places you've been dreaming about.</h1>
+
+        <p>
+            Get inspired by destinations, experiences and
+            unforgettable moments around the world.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= GALLERY ================= -->
+
+<section class="gallery-section">
+
+    <div class="section-heading">
+
+        <span class="section-tag">EXPLORE</span>
+
+        <h2>Moments worth travelling for.</h2>
+
+        <p>
+            Browse some of Tripora's favourite destinations.
+        </p>
+
+    </div>
+
+
+    <!-- FILTER BUTTONS -->
+
+    <div class="gallery-filters">
+
+        <button
+            class="gallery-filter active"
+            onclick="filterGallery('all', this)"
+        >
+            All
+        </button>
+
+        <button
+            class="gallery-filter"
+            onclick="filterGallery('beach', this)"
+        >
+            Beaches
+        </button>
+
+        <button
+            class="gallery-filter"
+            onclick="filterGallery('nature', this)"
+        >
+            Nature
+        </button>
+
+        <button
+            class="gallery-filter"
+            onclick="filterGallery('culture', this)"
+        >
+            Culture
+        </button>
+
+        <button
+            class="gallery-filter"
+            onclick="filterGallery('adventure', this)"
+        >
+            Adventure
+        </button>
+
+    </div>
+
+
+    <!-- PHOTO GRID -->
+
+    <div class="gallery-grid">
+
+
+        <!-- PHOTO 1 -->
+
+        <div class="gallery-item beach">
+
+            <img
+                src="images/bali.jfif"
+                alt="Bali tropical destination"
+            >
+
+            <div class="gallery-overlay">
+
+                <span>BEACH</span>
+
+                <h3>Bali, Indonesia</h3>
+
+                <p>Tropical escape</p>
+
+            </div>
+
+        </div>
+
+
+        <!-- PHOTO 2 -->
+
+        <div class="gallery-item culture">
+
+            <img
+                src="images/japan.jfif"
+                alt="Kyoto Japan"
+            >
+
+            <div class="gallery-overlay">
+
+                <span>CULTURE</span>
+
+                <h3>Kyoto, Japan</h3>
+
+                <p>Tradition & timeless beauty</p>
+
+            </div>
+
+        </div>
+
+
+        <!-- PHOTO 3 -->
+
+        <div class="gallery-item nature">
+
+            <img
+                src="images/switzerland.jfif"
+                alt="Swiss Alps"
+            >
+
+            <div class="gallery-overlay">
+
+                <span>NATURE</span>
+
+                <h3>Swiss Alps</h3>
+
+                <p>Mountains & fresh air</p>
+
+            </div>
+
+        </div>
+
+
+        <!-- PHOTO 4 -->
+
+        <div class="gallery-item nature">
+
+            <img
+                src="images/nature.jfif"
+                alt="Kerala nature"
+            >
+
+            <div class="gallery-overlay">
+
+                <span>NATURE</span>
+
+                <h3>Kerala, India</h3>
+
+                <p>Backwaters & greenery</p>
+
+            </div>
+
+        </div>
+
+
+        <!-- PHOTO 5 -->
+
+        <div class="gallery-item adventure">
+
+            <img
+                src="images/adventure.jfif"
+                alt="Adventure destination"
+            >
+
+            <div class="gallery-overlay">
+
+                <span>ADVENTURE</span>
+
+                <h3>Mountain Escape</h3>
+
+                <p>Chase the thrill</p>
+
+            </div>
+
+        </div>
+
+
+        <!-- PHOTO 6 -->
+
+        <div class="gallery-item beach">
+
+            <img
+                src="images/hero.jfif"
+                alt="Tropical beach"
+            >
+
+            <div class="gallery-overlay">
+
+                <span>BEACH</span>
+
+                <h3>Goa, India</h3>
+
+                <p>Sun, sand & sunsets</p>
+
+            </div>
+
+        </div>
+
+
+        <!-- PHOTO 7 -->
+
+        <div class="gallery-item adventure">
+
+            <img
+                src="images/adventure.jfif"
+                alt="Adventure landscape"
+            >
+
+            <div class="gallery-overlay">
+
+                <span>ADVENTURE</span>
+
+                <h3>Dubai</h3>
+
+                <p>Explore beyond the ordinary</p>
+
+            </div>
+
+        </div>
+
+
+        <!-- PHOTO 8 -->
+
+        <div class="gallery-item culture">
+
+            <img
+                src="images/culture.jfif"
+                alt="Cultural destination"
+            >
+
+            <div class="gallery-overlay">
+
+                <span>CULTURE</span>
+
+                <h3>Paris, France</h3>
+
+                <p>Art, history & romance</p>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- ================= INSPIRATION ================= -->
+
+<section class="gallery-inspiration">
+
+    <div class="gallery-inspiration-content">
+
+        <span class="section-tag">YOUR NEXT MEMORY</span>
+
+        <h2>
+            Every destination has a story.
+        </h2>
+
+        <p>
+            Start planning yours with Tripora.
+        </p>
+
+        <a href="destinations.html" class="primary-btn">
+            Explore Destinations
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+    <div class="footer-content">
+
+        <div>
+
+            <h2>TRIPORA</h2>
+
+            <p>
+                Plan less. Experience more.
+            </p>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <a href="destinations.html">Destinations</a>
+            <a href="packages.html">Packages</a>
+            <a href="hotels.html">Hotels</a>
+            <a href="contact.html">Contact</a>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <p>© 2026 Tripora. All rights reserved.</p>
+
+    </div>
+
+</footer>
+
+
+<script src="js/script.js"></script>
+
+</body>
+
+</html>

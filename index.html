@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tripora | Plan Less. Experience More.</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            Tripora<span>.</span>
+        </div>
+
+        <nav class="nav-links">
+            <a href="index.html" class="active">Home</a>
+            <a href="destinations.html">Discover</a>
+            <a href="packages.html">Packages</a>
+            <a href="hotels.html">Hotels</a>
+            <a href="flights.html">Flights</a>
+            <a href="itinerary.html">My Trip</a>
+        </nav>
+
+        <div class="nav-actions">
+            <span id="navUser"></span>
+            <a href="login.html" id="navLogin">Login</a>
+            <a href="register.html" class="signup-btn">Get Started</a>
+        </div>
+
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero">
+    <div class="hero-slider">
+
+        <div class="hero-slide active">
+            <img src="images/hero.jfif" alt="Goa beach">
+            <div class="hero-overlay"></div>
+
+            <div class="hero-content">
+                <span class="hero-label">TRAVEL YOUR WAY</span>
+                <h1>Go somewhere<br><em>you'll remember.</em></h1>
+                <p>Discover destinations, build your perfect trip and book everything in one place.</p>
+
+                <div class="hero-actions">
+                    <a href="destinations.html" class="btn btn-primary">
+                        Explore Destinations →
+                    </a>
+                    <a href="itinerary.html" class="btn btn-outline">
+                        Build My Trip
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-location">
+                <span id="heroLocation">GOA, INDIA</span>
+            </div>
+        </div>
+
+        <div class="hero-slide">
+            <img src="images/bali.jfif" alt="Bali">
+            <div class="hero-overlay"></div>
+
+            <div class="hero-content">
+                <span class="hero-label">TROPICAL ESCAPE</span>
+                <h1>Find your<br><em>island story.</em></h1>
+                <p>Warm beaches, unforgettable sunsets and experiences worth remembering.</p>
+
+                <div class="hero-actions">
+                    <a href="destinations.html" class="btn btn-primary">
+                        Explore Bali →
+                    </a>
+                    <a href="itinerary.html" class="btn btn-outline">
+                        Build My Trip
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-location">
+                <span id="heroLocation2">BALI, INDONESIA</span>
+            </div>
+        </div>
+
+        <div class="hero-slide">
+            <img src="images/switzerland.jfif" alt="Swiss Alps">
+            <div class="hero-overlay"></div>
+
+            <div class="hero-content">
+                <span class="hero-label">CHASE THE MOUNTAINS</span>
+                <h1>Adventure is<br><em>waiting.</em></h1>
+                <p>Trade ordinary days for mountain views and extraordinary experiences.</p>
+
+                <div class="hero-actions">
+                    <a href="destinations.html" class="btn btn-primary">
+                        Explore Switzerland →
+                    </a>
+                    <a href="itinerary.html" class="btn btn-outline">
+                        Build My Trip
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-location">
+                <span>SWISS ALPS, SWITZERLAND</span>
+            </div>
+        </div>
+
+        <!-- Slider Controls -->
+        <button class="hero-arrow hero-prev" onclick="changeHeroSlide(-1)">
+            ←
+        </button>
+
+        <button class="hero-arrow hero-next" onclick="changeHeroSlide(1)">
+            →
+        </button>
+
+        <div class="hero-dots">
+            <button class="hero-dot active" onclick="goToHeroSlide(0)"></button>
+            <button class="hero-dot" onclick="goToHeroSlide(1)"></button>
+            <button class="hero-dot" onclick="goToHeroSlide(2)"></button>
+        </div>
+
+    </div>
+</section>
+
+
+            <!-- FLOATING SEARCH -->
+
+            <div class="travel-search">
+
+                <div class="search-field">
+    <div class="search-icon">⌖</div>
+
+    <div class="search-input-wrapper">
+        <small>DESTINATION</small>
+        <input
+            type="text"
+            id="homeDestinationSearch"
+            placeholder="Where do you want to go?"
+        >
+    </div>
+</div>
+
+                <div class="search-divider"></div>
+
+
+                <div class="search-field">
+
+                    <div class="search-icon">◷</div>
+
+                    <div>
+                        <small>TRAVEL TYPE</small>
+                        <strong>Choose your experience</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="search-divider"></div>
+
+
+                <div class="search-field">
+
+                    <div class="search-icon">₹</div>
+
+                    <div>
+                        <small>YOUR BUDGET</small>
+                        <strong>Set your range</strong>
+                    </div>
+
+                </div>
+
+
+                <button class="search-button" type="button" onclick="searchFromHome()">
+                    Search
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= TRAVEL MOODS ================= -->
+<section class="travel-moods">
+    <div class="section-heading">
+        <span class="eyebrow">CHOOSE YOUR VIBE</span>
+        <h2>Where does your mood<br>take you?</h2>
+        <p>Tell us what kind of escape you're craving.</p>
+    </div>
+
+    <div class="mood-grid">
+
+        <button class="mood-card" onclick="selectTravelMood('beach')">
+            <span class="mood-icon">🌊</span>
+            <strong>Beach Escape</strong>
+            <small>Sun, sand & sunsets</small>
+            <span class="mood-arrow">↗</span>
+        </button>
+
+        <button class="mood-card" onclick="selectTravelMood('adventure')">
+            <span class="mood-icon">🏔️</span>
+            <strong>Adventure</strong>
+            <small>Thrills & mountains</small>
+            <span class="mood-arrow">↗</span>
+        </button>
+
+        <button class="mood-card" onclick="selectTravelMood('nature')">
+            <span class="mood-icon">🌿</span>
+            <strong>Nature</strong>
+            <small>Slow down & reconnect</small>
+            <span class="mood-arrow">↗</span>
+        </button>
+
+        <button class="mood-card" onclick="selectTravelMood('culture')">
+            <span class="mood-icon">🏛️</span>
+            <strong>Culture</strong>
+            <small>History, art & stories</small>
+            <span class="mood-arrow">↗</span>
+        </button>
+
+    </div>
+</section>
+
+        <!-- ================= FEATURED DESTINATIONS ================= -->
+
+        <section class="featured">
+
+            <div class="section-heading-row">
+
+                <div>
+                    <p class="eyebrow">TRIPORA PICKS</p>
+
+                    <h2>
+                        Places worth
+                        <span>going to.</span>
+                    </h2>
+                </div>
+
+                <a href="destinations.html" class="view-all">
+                    View all destinations →
+                </a>
+
+            </div>
+
+
+            <div class="destination-grid">
+
+
+                <!-- DESTINATION 1 -->
+
+                <article class="destination-card large-card">
+
+                    <div class="destination-photo bali-photo">
+
+                        <div class="photo-label">
+                            TRENDING
+                        </div>
+
+                        <div class="destination-rating">
+                            ★ 4.9
+                        </div>
+
+                    </div>
+
+                    <div class="destination-details">
+
+                        <div>
+                            <h3>Bali</h3>
+                            <p>Indonesia · Southeast Asia</p>
+                        </div>
+
+                        <div class="price">
+                            <small>FROM</small>
+                            <strong>₹24,999</strong>
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- DESTINATION 2 -->
+
+                <article class="destination-card">
+
+                    <div class="destination-photo japan-photo">
+
+                        <div class="destination-rating">
+                            ★ 4.8
+                        </div>
+
+                    </div>
+
+                    <div class="destination-details">
+
+                        <div>
+                            <h3>Kyoto</h3>
+                            <p>Japan · East Asia</p>
+                        </div>
+
+                        <div class="price">
+                            <small>FROM</small>
+                            <strong>₹48,500</strong>
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- DESTINATION 3 -->
+
+                <article class="destination-card">
+
+                    <div class="destination-photo swiss-photo">
+
+                        <div class="destination-rating">
+                            ★ 4.9
+                        </div>
+
+                    </div>
+
+                    <div class="destination-details">
+
+                        <div>
+                            <h3>Swiss Alps</h3>
+                            <p>Switzerland · Europe</p>
+                        </div>
+
+                        <div class="price">
+                            <small>FROM</small>
+                            <strong>₹72,999</strong>
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= TRIP BUILDER ================= -->
+
+        <section class="trip-builder">
+
+            <div class="trip-builder-content">
+
+                <p class="eyebrow">
+                    YOUR TRIP. YOUR WAY.
+                </p>
+
+                <h2>
+                    Build the trip
+                    <br>
+                    <span>you actually want.</span>
+                </h2>
+
+                <p>
+                    Combine flights, hotels and experiences in one place.
+                    We'll keep track of your itinerary and estimated budget
+                    while you plan.
+                </p>
+
+                <a href="itinerary.html" class="dark-btn">
+                    Start Building
+                    <span>→</span>
+                </a>
+
+            </div>
+
+
+            <div class="trip-preview">
+
+                <div class="preview-header">
+
+                    <div>
+                        <small>MY TRIP</small>
+                        <h3>Kerala Escape</h3>
+                    </div>
+
+                    <span class="saved">SAVED</span>
+
+                </div>
+
+
+                <div class="preview-item">
+
+                    <div class="preview-icon">
+                        ✈
+                    </div>
+
+                    <div>
+                        <small>FLIGHT</small>
+                        <strong>Mumbai → Kochi</strong>
+                    </div>
+
+                    <b>₹7,500</b>
+
+                </div>
+
+
+                <div class="preview-item">
+
+                    <div class="preview-icon">
+                        🏨
+                    </div>
+
+                    <div>
+                        <small>HOTEL</small>
+                        <strong>Marina Bay Resort</strong>
+                    </div>
+
+                    <b>₹8,400</b>
+
+                </div>
+
+
+                <div class="preview-item">
+
+                    <div class="preview-icon">
+                        ✦
+                    </div>
+
+                    <div>
+                        <small>EXPERIENCE</small>
+                        <strong>Backwater Tour</strong>
+                    </div>
+
+                    <b>₹3,500</b>
+
+                </div>
+
+
+                <div class="preview-total">
+
+                    <span>ESTIMATED TOTAL</span>
+
+                    <strong>₹19,400</strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= FEATURES ================= -->
+
+        <section class="features-section">
+
+            <div class="section-intro centered">
+
+                <p class="eyebrow">WHY TRIPORA?</p>
+
+                <h2>
+                    Everything you need.
+                    <br>
+                    <span>Nothing you don't.</span>
+                </h2>
+
+            </div>
+
+
+            <div class="features-grid">
+
+                <div class="feature">
+
+                    <div class="feature-number">01</div>
+
+                    <div class="feature-icon">⌕</div>
+
+                    <h3>Discover Better</h3>
+
+                    <p>
+                        Explore destinations based on your interests,
+                        budget and travel style.
+                    </p>
+
+                </div>
+
+
+                <div class="feature">
+
+                    <div class="feature-number">02</div>
+
+                    <div class="feature-icon">◈</div>
+
+                    <h3>Plan Smarter</h3>
+
+                    <p>
+                        Build your entire journey in one place with
+                        an organized travel itinerary.
+                    </p>
+
+                </div>
+
+
+                <div class="feature">
+
+                    <div class="feature-number">03</div>
+
+                    <div class="feature-icon">₹</div>
+
+                    <h3>Know Your Budget</h3>
+
+                    <p>
+                        Keep track of flights, hotels and activities
+                        before making your booking.
+                    </p>
+
+                </div>
+
+
+                <div class="feature">
+
+                    <div class="feature-number">04</div>
+
+                    <div class="feature-icon">★</div>
+
+                    <h3>Travel Confidently</h3>
+
+                    <p>
+                        Read ratings and reviews from other travelers
+                        before you decide.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= CTA ================= -->
+
+        <section class="final-cta">
+
+            <p class="eyebrow">
+                THE WORLD IS WAITING
+            </p>
+
+            <h2>
+                Where will you
+                <span>go next?</span>
+            </h2>
+
+            <p>
+                Your next unforgettable experience is closer than you think.
+            </p>
+
+            <a href="destinations.html" class="primary-btn">
+                Start Exploring
+                <span>→</span>
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-main">
+
+            <div class="footer-brand">
+
+                <div class="logo">
+                    Tripora<span>.</span>
+                </div>
+
+                <p>
+                    A smarter way to discover, plan
+                    and experience the world.
+                </p>
+
+                <div class="socials">
+                    <span>◎</span>
+                    <span>𝕏</span>
+                    <span>in</span>
+                </div>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>Explore</h4>
+
+                <a href="destinations.html">Destinations</a>
+                <a href="packages.html">Tour Packages</a>
+                <a href="gallery.html">Photo Gallery</a>
+                <a href="reviews.html">Reviews</a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>Plan</h4>
+
+                <a href="hotels.html">Hotels</a>
+                <a href="flights.html">Flights</a>
+                <a href="itinerary.html">My Trip</a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>Company</h4>
+
+                <a href="contact.html">Contact Us</a>
+                <a href="login.html">Login</a>
+                <a href="register.html">Create Account</a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <span>© 2026 Tripora. All rights reserved.</span>
+
+            <span>Made for explorers ✦</span>
+
+        </div>
+
+    </footer>
+    <!-- Footer -->
+    <footer>
+        ...
+    </footer>
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Create Account | Tripora</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="auth-page">
+
+    <div class="auth-container">
+
+        <div class="auth-image">
+            <img src="images/hero.jfif" alt="Travel destination">
+
+            <div class="auth-image-content">
+                <span>START YOUR JOURNEY</span>
+                <h1>Travel more.<br>Experience more.</h1>
+                <p>Create your Tripora account and start planning your next adventure.</p>
+            </div>
+        </div>
+
+
+        <div class="auth-form-container">
+
+            <div class="auth-form">
+
+                <a href="index.html" class="auth-logo">TRIPORA</a>
+
+                <span class="auth-label">CREATE ACCOUNT</span>
+
+                <h2>Let's get you travelling.</h2>
+
+                <p class="auth-subtitle">
+                    Create your account to save trips and manage your bookings.
+                </p>
+
+
+                <form id="registerForm">
+
+                    <div class="form-group">
+                        <label for="registerName">Full Name</label>
+
+                        <input
+                            type="text"
+                            id="registerName"
+                            placeholder="Enter your full name"
+                            required
+                        >
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="registerEmail">Email Address</label>
+
+                        <input
+                            type="email"
+                            id="registerEmail"
+                            placeholder="you@example.com"
+                            required
+                        >
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="registerPhone">Phone Number</label>
+
+                        <input
+                            type="tel"
+                            id="registerPhone"
+                            placeholder="Enter your phone number"
+                            required
+                        >
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="registerPassword">Password</label>
+
+                        <input
+                            type="password"
+                            id="registerPassword"
+                            placeholder="Create a password"
+                            required
+                        >
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="registerConfirmPassword">
+                            Confirm Password
+                        </label>
+
+                        <input
+                            type="password"
+                            id="registerConfirmPassword"
+                            placeholder="Confirm your password"
+                            required
+                        >
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="travelPreference">
+                            Travel Preference
+                        </label>
+
+                        <select id="travelPreference">
+                            <option value="beach">Beach & Relaxation</option>
+                            <option value="adventure">Adventure</option>
+                            <option value="nature">Nature & Wildlife</option>
+                            <option value="culture">Culture & History</option>
+                            <option value="luxury">Luxury Travel</option>
+                        </select>
+                    </div>
+
+
+                    <button type="submit" class="auth-button">
+                        Create Account →
+                    </button>
+
+                </form>
+
+
+                <p class="auth-switch">
+                    Already have an account?
+                    <a href="login.html">Login here</a>
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>

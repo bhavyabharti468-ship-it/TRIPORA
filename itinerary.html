@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Trip | Tripora</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+
+        <div class="logo">TRIPORA</div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="destinations.html">Discover</a>
+            <a href="packages.html">Packages</a>
+            <a href="hotels.html">Hotels</a>
+            <a href="flights.html">Flights</a>
+            <a href="itinerary.html" class="active">My Trip</a>
+        </nav>
+
+        <div class="nav-actions">
+            <span id="navUser"></span>
+            <a href="login.html" id="navLogin">Login</a>
+            <a href="register.html" class="nav-btn">Get Started</a>
+        </div>
+
+    </header>
+
+
+    <!-- ================= PAGE HERO ================= -->
+
+    <section class="itinerary-hero">
+
+        <div class="itinerary-hero-content">
+
+            <span class="section-tag">MY TRIP</span>
+
+            <h1>Your journey, all in one place.</h1>
+
+            <p>
+                Keep your flights, stays, experiences and
+                travel plans organised with Tripora.
+            </p>
+
+        </div>
+
+    </section>
+
+    <section class="saved-trip-section">
+
+        <div class="saved-trip-container">
+
+            <div class="saved-trip-heading">
+                <span>YOUR SAVED TRIP</span>
+
+                <h2>Ready for your next adventure?</h2>
+
+                <p>
+                    Your selected destination is saved here.
+                </p>
+            </div>
+
+            <div id="savedTripCard" class="saved-trip-card">
+                <!-- JavaScript will load the saved destination here -->
+            </div>
+
+        </div>
+
+    </section>
+    <section class="trip-builder-section">
+
+        <div class="trip-builder-container">
+
+            <div class="trip-builder-heading">
+                <span>TRIP BUILDER</span>
+
+                <h2>Build your perfect getaway</h2>
+
+                <p>
+                    Customize your trip and see your estimated budget instantly.
+                </p>
+            </div>
+
+
+            <div class="trip-builder-grid">
+
+                <!-- LEFT SIDE -->
+                <div class="trip-builder-form">
+
+                    <!-- Travellers -->
+
+                    <div class="builder-group">
+
+                        <label>Number of Travellers</label>
+
+                        <div class="traveller-control">
+
+                            <button type="button" onclick="changeTravellers(-1)">
+                                −
+                            </button>
+
+                            <span id="travellerCount">2</span>
+
+                            <button type="button" onclick="changeTravellers(1)">
+                                +
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Duration -->
+
+                    <div class="builder-group">
+
+                        <label for="tripDays">
+                            Trip Duration
+                        </label>
+
+                        <select id="tripDays">
+                            <option value="3">3 Days</option>
+                            <option value="5" selected>5 Days</option>
+                            <option value="7">7 Days</option>
+                            <option value="10">10 Days</option>
+                        </select>
+
+                    </div>
+
+
+                    <!-- Hotel -->
+
+                    <div class="builder-group">
+
+                        <label>Choose Your Hotel</label>
+
+                        <div class="builder-options">
+
+                            <label class="builder-option">
+
+                                <input type="radio" name="hotel" value="2500" data-name="Budget Stay">
+
+                                <div>
+                                    <strong>Budget Stay</strong>
+                                    <small>₹2,500 / night</small>
+                                </div>
+
+                            </label>
+
+
+                            <label class="builder-option">
+
+                                <input type="radio" name="hotel" value="4200" data-name="Comfort Stay" checked>
+
+                                <div>
+                                    <strong>Comfort Stay</strong>
+                                    <small>₹4,200 / night</small>
+                                </div>
+
+                            </label>
+
+
+                            <label class="builder-option">
+
+                                <input type="radio" name="hotel" value="7500" data-name="Premium Stay">
+
+                                <div>
+                                    <strong>Premium Stay</strong>
+                                    <small>₹7,500 / night</small>
+                                </div>
+
+                            </label>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Experiences -->
+
+                    <div class="builder-group">
+
+                        <label>Choose Experiences</label>
+
+                        <div class="builder-options">
+
+                            <label class="builder-option">
+
+                                <input type="checkbox" value="1500" data-name="Sightseeing">
+
+                                <div>
+                                    <strong>City Sightseeing</strong>
+                                    <small>₹1,500</small>
+                                </div>
+
+                            </label>
+
+
+                            <label class="builder-option">
+
+                                <input type="checkbox" value="2500" data-name="Adventure">
+
+                                <div>
+                                    <strong>Adventure Experience</strong>
+                                    <small>₹2,500</small>
+                                </div>
+
+                            </label>
+
+
+                            <label class="builder-option">
+
+                                <input type="checkbox" value="2000" data-name="Local Food Tour">
+
+                                <div>
+                                    <strong>Local Food Tour</strong>
+                                    <small>₹2,000</small>
+                                </div>
+
+                            </label>
+
+
+                            <label class="builder-option">
+
+                                <input type="checkbox" value="3500" data-name="Special Experience">
+
+                                <div>
+                                    <strong>Premium Experience</strong>
+                                    <small>₹3,500</small>
+                                </div>
+
+                            </label>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- RIGHT SIDE -->
+
+                <div class="trip-budget-card">
+
+                    <span>ESTIMATED TRIP COST</span>
+
+                    <h3 id="builderDestination">Select a destination</h3>
+
+                    <div class="budget-total" id="builderTotal">
+                        ₹0
+                    </div>
+                    <div class="budget-line">
+                        <span>Destination</span>
+                        <strong id="builderDestinationPrice">₹0</strong>
+                    </div>
+
+                    <div class="budget-line">
+                        <span>Flights</span>
+                        <strong id="builderFlights">
+                            ₹0
+                        </strong>
+                    </div>
+
+                    <div class="budget-line">
+                        <span>Hotel</span>
+                        <strong id="builderHotel">
+                            ₹0
+                        </strong>
+                    </div>
+
+                    <div class="budget-line">
+                        <span>Experiences</span>
+                        <strong id="builderExperiences">
+                            ₹0
+                        </strong>
+                    </div>
+
+                    <div class="budget-line">
+                        <span>Travellers</span>
+                        <strong id="builderTravellers">
+                            2
+                        </strong>
+                    </div>
+
+                    <button type="button" class="builder-save-btn" onclick="saveBuiltTrip()">
+
+                        Save My Trip →
+
+                    </button>
+
+                    <p id="builderMessage" class="builder-message">
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+    <section class="built-trip-section">
+
+        <div class="built-trip-container">
+
+            <div class="built-trip-heading">
+                <span>MY SAVED TRIP</span>
+
+                <h2>Your customized journey</h2>
+
+                <p>
+                    Your latest trip configuration is saved here.
+                </p>
+            </div>
+
+            <div id="builtTripCard" class="built-trip-card">
+                <!-- JavaScript will load the saved trip -->
+            </div>
+
+        </div>
+
+    </section>
+    <section class="bookings-section">
+        <div class="bookings-container">
+
+            <div class="bookings-heading">
+                <span>MY BOOKINGS</span>
+                <h2>Your travel reservations</h2>
+                <p>All your selected flights and hotels in one place.</p>
+            </div>
+
+            <div id="bookingsList" class="bookings-list">
+                <!-- JavaScript will load bookings here -->
+            </div>
+
+        </div>
+    </section>
+    <!-- ================= TRIP SUMMARY ================= -->
+
+    <section class="trip-section">
+
+        <div class="trip-container">
+
+            <div class="trip-header">
+
+                <div>
+
+                    <span class="section-tag">UPCOMING TRIP</span>
+
+                    <h2 id="dynamicTripName">Kerala Escape</h2>
+
+                    <p id="dynamicTripLocation">
+                        📍 Kochi → Munnar → Alleppey
+                    </p>
+
+                </div>
+
+                <div class="trip-status">
+                    Upcoming
+                </div>
+
+            </div>
+
+
+            <!-- ================= TRIP INFO ================= -->
+
+            <div class="trip-info-grid">
+
+                <div class="trip-info-card">
+
+                    <span>📅</span>
+
+                    <div>
+                        <small>TRAVEL DATES</small>
+                        <strong>15 - 19 October 2026</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="trip-info-card">
+
+                    <span>👥</span>
+
+                    <div>
+                        <small>TRAVELLERS</small>
+                        <strong>2 People</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="trip-info-card">
+
+                    <span>💰</span>
+
+                    <div>
+                        <small>ESTIMATED BUDGET</small>
+                        <strong>₹19,400</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= ITINERARY ================= -->
+
+            <div class="itinerary-heading">
+
+                <div>
+
+                    <span class="section-tag">DAY BY DAY</span>
+
+                    <h2 id="dynamicItineraryTitle">Your Travel Itinerary</h2>
+
+                </div>
+
+                <button class="add-day-btn" onclick="addTripDay()">
+                    + Add Activity
+                </button>
+
+            </div>
+
+
+            <div class="itinerary-days" id="dynamicItinerary">
+                <!-- JavaScript will generate itinerary days here -->
+            </div>
+
+
+
+
+
+            <!-- ================= BUDGET ================= -->
+
+            <div class="trip-budget">
+
+                <div>
+
+                    <span class="section-tag">TRIP BUDGET</span>
+
+                    <h2>Estimated total</h2>
+
+                </div>
+
+
+                <div class="budget-total" id="dynamicBudgetTotal">
+                    ₹19,400
+                </div>
+
+                <div class="budget-breakdown">
+
+                    <div>
+                        <span>✈️ Flights</span>
+                        <strong>₹5,500</strong>
+                    </div>
+
+                    <div>
+                        <span>🏨 Hotel</span>
+                        <strong>₹8,400</strong>
+                    </div>
+
+                    <div>
+                        <span>🎟 Experiences</span>
+                        <strong>₹3,500</strong>
+                    </div>
+
+                    <div>
+                        <span>🚗 Transfers</span>
+                        <strong>₹2,000</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CTA ================= -->
+
+    <section class="trip-cta">
+
+        <div>
+
+            <span class="section-tag">READY TO GO?</span>
+
+            <h2>Your adventure is waiting.</h2>
+
+            <p>
+                Keep planning, keep exploring and make
+                every part of your journey count.
+            </p>
+
+            <a href="destinations.html" class="primary-btn">
+                Explore More
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="footer">
+
+        <div class="footer-content">
+
+            <div>
+
+                <h2>TRIPORA</h2>
+
+                <p>
+                    Plan less. Experience more.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <a href="destinations.html">Destinations</a>
+                <a href="packages.html">Packages</a>
+                <a href="hotels.html">Hotels</a>
+                <a href="contact.html">Contact</a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>© 2026 Tripora. All rights reserved.</p>
+
+        </div>
+
+    </footer>
+
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

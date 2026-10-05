@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Flight Booking | Tripora</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+    <div class="logo">TRIPORA</div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="destinations.html">Discover</a>
+        <a href="packages.html">Packages</a>
+        <a href="hotels.html">Hotels</a>
+        <a href="flights.html" class="active">Flights</a>
+        <a href="itinerary.html">My Trip</a>
+    </nav>
+
+    <div class="nav-actions">
+        <span id="navUser"></span>
+        <a href="login.html" id="navLogin">Login</a>
+        <a href="register.html" class="nav-btn">Get Started</a>
+    </div>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="flight-hero">
+
+    <div class="flight-hero-overlay">
+
+        <div class="flight-hero-content">
+
+            <span class="section-tag">FLIGHT BOOKING</span>
+
+            <h1>Fly towards your next adventure.</h1>
+
+            <p>
+                Find flights that fit your destination, schedule and budget.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SEARCH ================= -->
+
+<section class="flight-search-section">
+
+    <div class="flight-search-box">
+
+        <div class="trip-type">
+            <label>
+                <input type="radio" name="tripType" checked>
+                Round Trip
+            </label>
+
+            <label>
+                <input type="radio" name="tripType">
+                One Way
+            </label>
+        </div>
+
+
+        <div class="flight-fields">
+
+            <div class="flight-field">
+
+                <label>From</label>
+
+                <input
+                    type="text"
+                    id="fromCity"
+                    placeholder="e.g. Mumbai"
+                >
+
+            </div>
+
+
+            <div class="flight-field">
+
+                <label>To</label>
+
+                <input
+                    type="text"
+                    id="toCity"
+                    placeholder="e.g. Kochi"
+                >
+
+            </div>
+
+
+            <div class="flight-field">
+
+                <label>Departure</label>
+
+                <input
+                    type="date"
+                    id="departureDate"
+                >
+
+            </div>
+
+
+            <div class="flight-field">
+
+                <label>Passengers</label>
+
+                <select id="passengers">
+
+                    <option>1 Passenger</option>
+                    <option>2 Passengers</option>
+                    <option>3 Passengers</option>
+                    <option>4 Passengers</option>
+
+                </select>
+
+            </div>
+
+
+            <button
+                class="flight-search-btn"
+                onclick="searchFlights()"
+            >
+                Search Flights
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FLIGHT RESULTS ================= -->
+
+<section class="flight-results">
+
+    <div class="section-heading">
+
+        <span class="section-tag">AVAILABLE FLIGHTS</span>
+
+        <h2>Choose your flight</h2>
+
+        <p>
+            Compare options and select the flight that works best for you.
+        </p>
+
+    </div>
+
+
+    <div id="flightMessage" class="flight-message"></div>
+
+
+    <div class="flight-list">
+
+
+        <!-- FLIGHT 1 -->
+
+        <div class="flight-card">
+
+            <div class="airline-info">
+
+                <div class="airline-logo">✈</div>
+
+                <div>
+                    <h3>IndiGo</h3>
+                    <p>6E 2345</p>
+                </div>
+
+            </div>
+
+
+            <div class="flight-route">
+
+                <div>
+                    <strong>06:30</strong>
+                    <span class="flight-from">Mumbai</span>
+                </div>
+
+                <div class="flight-line">
+                    ───────── ✈ ─────────
+                    <small>1h 55m • Non-stop</small>
+                </div>
+
+                <div>
+                    <strong>08:25</strong>
+                    <span class="flight-to">Kochi</span>
+                </div>
+
+            </div>
+
+
+            <div class="flight-price">
+
+                <strong>₹5,499</strong>
+
+                <span>per passenger</span>
+
+                <button onclick="selectFlight('IndiGo', 5499)">
+                    Select
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- FLIGHT 2 -->
+
+        <div class="flight-card">
+
+            <div class="airline-info">
+
+                <div class="airline-logo">✈</div>
+
+                <div>
+                    <h3>Air India</h3>
+                    <p>AI 681</p>
+                </div>
+
+            </div>
+
+
+            <div class="flight-route">
+
+                <div>
+                    <strong>09:15</strong>
+                    <span class="flight-from">Mumbai</span>
+                </div>
+
+                <div class="flight-line">
+                    ───────── ✈ ─────────
+                    <small>2h 05m • Non-stop</small>
+                </div>
+
+                <div>
+                    <strong>11:20</strong>
+                    <span class="flight-to">Kochi</span>
+                </div>
+
+            </div>
+
+
+            <div class="flight-price">
+
+                <strong>₹6,250</strong>
+
+                <span>per passenger</span>
+
+                <button onclick="selectFlight('Air India', 6250)">
+                    Select
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- FLIGHT 3 -->
+
+        <div class="flight-card">
+
+            <div class="airline-info">
+
+                <div class="airline-logo">✈</div>
+
+                <div>
+                    <h3>Akasa Air</h3>
+                    <p>QP 1320</p>
+                </div>
+
+            </div>
+
+
+            <div class="flight-route">
+
+                <div>
+                    <strong>14:40</strong>
+                    <span class="flight-from">Mumbai</span>
+                </div>
+
+                <div class="flight-line">
+                    ───────── ✈ ─────────
+                    <small>2h 00m • Non-stop</small>
+                </div>
+
+                <div>
+                    <strong>16:40</strong>
+                    <span class="flight-to">Kochi</span>
+                </div>
+
+            </div>
+
+
+            <div class="flight-price">
+
+                <strong>₹5,899</strong>
+
+                <span>per passenger</span>
+
+                <button onclick="selectFlight('Akasa Air', 5899)">
+                    Select
+                </button>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- ================= WHY TRIPORA ================= -->
+
+<section class="flight-features">
+
+    <div class="section-heading">
+
+        <span class="section-tag">WHY TRIPORA</span>
+
+        <h2>Fly without the hassle.</h2>
+
+    </div>
+
+
+    <div class="feature-grid">
+
+        <div class="feature-card">
+            <div class="feature-icon">🔎</div>
+            <h3>Easy Search</h3>
+            <p>
+                Search flights based on your destination and travel date.
+            </p>
+        </div>
+
+
+        <div class="feature-card">
+            <div class="feature-icon">💰</div>
+            <h3>Budget Friendly</h3>
+            <p>
+                Compare different options and choose flights that suit your budget.
+            </p>
+        </div>
+
+
+        <div class="feature-card">
+            <div class="feature-icon">🧳</div>
+            <h3>Plan Your Trip</h3>
+            <p>
+                Add your selected flight to your Tripora travel itinerary.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+    <div class="footer-content">
+
+        <div>
+            <h2>TRIPORA</h2>
+
+            <p>
+                Plan less. Experience more.
+            </p>
+        </div>
+
+
+        <div class="footer-links">
+
+            <a href="destinations.html">Destinations</a>
+            <a href="packages.html">Packages</a>
+            <a href="hotels.html">Hotels</a>
+            <a href="contact.html">Contact</a>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <p>© 2026 Tripora. All rights reserved.</p>
+
+    </div>
+
+</footer>
+
+
+<script src="js/script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hotel Booking | Tripora</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+    <div class="logo">TRIPORA</div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="destinations.html">Discover</a>
+        <a href="packages.html">Packages</a>
+        <a href="hotels.html" class="active">Hotels</a>
+        <a href="flights.html">Flights</a>
+        <a href="itinerary.html">My Trip</a>
+    </nav>
+
+    <div class="nav-actions">
+        <span id="navUser"></span>
+        <a href="login.html" id="navLogin">Login</a>
+        <a href="register.html" class="nav-btn">Get Started</a>
+    </div>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hotel-hero">
+
+    <div class="hotel-hero-overlay">
+
+        <div class="hotel-hero-content">
+
+            <span class="section-tag">HOTEL BOOKING</span>
+
+            <h1>Stay somewhere you'll remember.</h1>
+
+            <p>
+                Find comfortable stays that fit your destination,
+                style and budget.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SEARCH ================= -->
+
+<section class="hotel-search-section">
+
+    <div class="hotel-search-box">
+
+        <div class="hotel-field">
+
+            <label>Where are you going?</label>
+
+            <input
+                type="text"
+                id="hotelLocation"
+                placeholder="e.g. Kerala"
+            >
+
+        </div>
+
+
+        <div class="hotel-field">
+
+            <label>Check-in</label>
+
+            <input
+                type="date"
+                id="checkIn"
+            >
+
+        </div>
+
+
+        <div class="hotel-field">
+
+            <label>Check-out</label>
+
+            <input
+                type="date"
+                id="checkOut"
+            >
+
+        </div>
+
+
+        <div class="hotel-field">
+
+            <label>Guests</label>
+
+            <select id="hotelGuests">
+
+                <option>1 Guest</option>
+                <option>2 Guests</option>
+                <option>3 Guests</option>
+                <option>4 Guests</option>
+
+            </select>
+
+        </div>
+
+
+        <button
+            class="hotel-search-btn"
+            onclick="searchHotels()"
+        >
+            Search Hotels
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ================= HOTEL RESULTS ================= -->
+
+<section class="hotel-results">
+
+    <div class="section-heading">
+
+        <span class="section-tag">TOP STAYS</span>
+
+        <h2>Find your perfect stay</h2>
+
+        <p>
+            Handpicked hotels for every kind of traveller.
+        </p>
+
+    </div>
+
+
+    <div id="hotelMessage" class="hotel-message"></div>
+
+
+    <div class="hotel-grid">
+
+
+        <!-- HOTEL 1 -->
+
+        <div class="hotel-card" data-location="kerala">
+
+            <div class="hotel-image">
+
+                <img
+                    src="images/nature.jfif"
+                    alt="Kerala resort"
+                >
+
+                <span class="hotel-badge">
+                    Guest Favourite
+                </span>
+
+            </div>
+
+
+            <div class="hotel-content">
+
+                <div class="hotel-rating">
+                    ★ 4.8
+                </div>
+
+                <h3>Backwater Haven Resort</h3>
+
+                <p class="hotel-location">
+                    📍 Alleppey, Kerala
+                </p>
+
+                <p>
+                    Peaceful waterfront stay surrounded by
+                    Kerala's famous backwaters.
+                </p>
+
+
+                <div class="hotel-amenities">
+
+                    <span>🛏 King Bed</span>
+                    <span>🍳 Breakfast</span>
+                    <span>🏊 Pool</span>
+
+                </div>
+
+
+                <div class="hotel-bottom">
+
+                    <div>
+                        <strong>₹4,200</strong>
+                        <span>/ night</span>
+                    </div>
+
+                    <button onclick="bookHotel('Backwater Haven Resort', 4200)">
+                         Book Now
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- HOTEL 2 -->
+
+        <div class="hotel-card" data-location="bali">
+
+            <div class="hotel-image">
+
+                <img
+                    src="images/bali.jfif"
+                    alt="Bali hotel"
+                >
+
+                <span class="hotel-badge">
+                    Best Value
+                </span>
+
+            </div>
+
+
+            <div class="hotel-content">
+
+                <div class="hotel-rating">
+                    ★ 4.7
+                </div>
+
+                <h3>Ubud Jungle Retreat</h3>
+
+                <p class="hotel-location">
+                    📍 Ubud, Bali
+                </p>
+
+                <p>
+                    A peaceful tropical retreat surrounded
+                    by lush greenery and nature.
+                </p>
+
+
+                <div class="hotel-amenities">
+
+                    <span>🛏 Double Bed</span>
+                    <span>🍳 Breakfast</span>
+                    <span>🌴 Garden</span>
+
+                </div>
+
+
+                <div class="hotel-bottom">
+
+                    <div>
+                        <strong>₹6,800</strong>
+                        <span>/ night</span>
+                    </div>
+
+                    <button onclick="bookHotel('Ubud Jungle Retreat', 6800)">
+                         Book Now
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- HOTEL 3 -->
+
+        <div class="hotel-card" data-location="kyoto japan">
+
+            <div class="hotel-image">
+
+                <img
+                    src="images/japan.jfif"
+                    alt="Kyoto hotel"
+                >
+
+                <span class="hotel-badge">
+                    Premium
+                </span>
+
+            </div>
+
+
+            <div class="hotel-content">
+
+                <div class="hotel-rating">
+                    ★ 4.9
+                </div>
+
+                <h3>Kyoto Heritage Stay</h3>
+
+                <p class="hotel-location">
+                    📍 Kyoto, Japan
+                </p>
+
+                <p>
+                    Experience traditional Japanese hospitality
+                    with a modern touch.
+                </p>
+
+
+                <div class="hotel-amenities">
+
+                    <span>🛏 Suite</span>
+                    <span>🍵 Breakfast</span>
+                    <span>♨ Spa</span>
+
+                </div>
+
+
+                <div class="hotel-bottom">
+
+                    <div>
+                        <strong>₹9,500</strong>
+                        <span>/ night</span>
+                    </div>
+
+                    <button onclick="bookHotel('Kyoto Heritage Stay', 9500)">
+                         Book Now
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- HOTEL 4 -->
+
+        <div class="hotel-card" data-location="switzerland swiss alps">
+
+            <div class="hotel-image">
+
+                <img
+                    src="images/switzerland.jfif"
+                    alt="Swiss Alps hotel"
+                >
+
+                <span class="hotel-badge">
+                    Luxury
+                </span>
+
+            </div>
+
+
+            <div class="hotel-content">
+
+                <div class="hotel-rating">
+                    ★ 4.9
+                </div>
+
+                <h3>Alpine View Lodge</h3>
+
+                <p class="hotel-location">
+                    📍 Swiss Alps, Switzerland
+                </p>
+
+                <p>
+                    Wake up to breathtaking mountain views
+                    from this luxury alpine lodge.
+                </p>
+
+
+                <div class="hotel-amenities">
+
+                    <span>🛏 King Suite</span>
+                    <span>🍽 Restaurant</span>
+                    <span>🏔 Mountain View</span>
+
+                </div>
+
+
+                <div class="hotel-bottom">
+
+                    <div>
+                        <strong>₹14,500</strong>
+                        <span>/ night</span>
+                    </div>
+
+                    <button onclick="bookHotel('Alpine View Lodge', 14500)">
+                        Book Now
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- ================= HOTEL FEATURES ================= -->
+
+<section class="hotel-features">
+
+    <div class="section-heading">
+
+        <span class="section-tag">TRIPORA STAYS</span>
+
+        <h2>Everything you need for a great stay.</h2>
+
+    </div>
+
+
+    <div class="feature-grid">
+
+        <div class="feature-card">
+
+            <div class="feature-icon">🏨</div>
+
+            <h3>Handpicked Stays</h3>
+
+            <p>
+                Discover hotels selected for comfort,
+                location and overall experience.
+            </p>
+
+        </div>
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon">⭐</div>
+
+            <h3>Verified Ratings</h3>
+
+            <p>
+                Compare ratings and amenities before
+                choosing where to stay.
+            </p>
+
+        </div>
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon">💳</div>
+
+            <h3>Easy Booking</h3>
+
+            <p>
+                Choose your hotel and add it directly
+                to your Tripora travel plan.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+    <div class="footer-content">
+
+        <div>
+
+            <h2>TRIPORA</h2>
+
+            <p>
+                Plan less. Experience more.
+            </p>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <a href="destinations.html">Destinations</a>
+            <a href="packages.html">Packages</a>
+            <a href="flights.html">Flights</a>
+            <a href="contact.html">Contact</a>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <p>© 2026 Tripora. All rights reserved.</p>
+
+    </div>
+
+</footer>
+
+
+<script src="js/script.js"></script>
+
+</body>
+
+</html>

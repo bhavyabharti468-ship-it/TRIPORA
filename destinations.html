@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Discover Destinations | Tripora</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            <a href="index.html">TRIPORA</a>
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="destinations.html" class="active">Discover</a>
+            <a href="packages.html">Packages</a>
+            <a href="hotels.html">Hotels</a>
+            <a href="flights.html">Flights</a>
+            <a href="itinerary.html">My Trip</a>
+        </nav>
+
+        <div class="nav-buttons">
+            <span id="navUser"></span>
+            <a href="login.html" id="navLogin">Login</a>
+            <a href="register.html" class="nav-cta">Get Started</a>
+        </div>
+
+    </header>
+
+
+    <!-- PAGE HERO -->
+
+    <section class="destination-hero">
+
+        <div class="destination-hero-content">
+
+            <span class="eyebrow">EXPLORE THE WORLD</span>
+
+            <h1>
+                Find a place<br>
+                <span>worth remembering.</span>
+            </h1>
+
+            <p>
+                Discover beautiful destinations, compare your options
+                and find your next unforgettable escape.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- SEARCH & FILTER -->
+
+    <section class="destination-search">
+
+        <div class="search-container">
+
+            <div class="search-field">
+
+                <label>Search destination</label>
+
+                <input
+                    type="text"
+                    id="destinationSearch"
+                    placeholder="e.g. Bali, Japan, Kerala..."
+                >
+
+            </div>
+
+
+            <div class="search-field">
+
+                <label>Travel Type</label>
+
+                <select id="travelType">
+
+                    <option value="all">All Types</option>
+                    <option value="beach">Beach</option>
+                    <option value="adventure">Adventure</option>
+                    <option value="nature">Nature</option>
+                    <option value="culture">Culture</option>
+
+                </select>
+
+            </div>
+
+
+            <div class="search-field">
+
+                <label>Budget</label>
+
+                <select id="budgetFilter">
+
+                    <option value="all">Any Budget</option>
+                    <option value="budget">Under ₹15,000</option>
+                    <option value="mid">₹15,000 - ₹30,000</option>
+                    <option value="luxury">Above ₹30,000</option>
+
+                </select>
+
+            </div>
+
+
+            <button class="search-btn" onclick="filterDestinations()">
+                Search
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- DESTINATIONS -->
+
+    <main class="destinations-section">
+
+        <div class="section-heading">
+
+            <div>
+                <span class="eyebrow">POPULAR PICKS</span>
+
+                <h2>Where do you want to go?</h2>
+            </div>
+
+            <p id="destinationCount">
+                Showing 8 destinations
+            </p>
+
+        </div>
+
+
+        <div class="destination-grid" id="destinationGrid"></div>
+
+
+        <!-- NO RESULTS -->
+
+        <div id="noResults" class="no-results">
+
+            <h3>No destinations found</h3>
+
+            <p>
+                Try changing your search or filters.
+            </p>
+
+        </div>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer class="footer">
+
+        <div class="footer-logo">
+            TRIPORA
+        </div>
+
+        <p>
+            Plan less. Experience more.
+        </p>
+
+        <p class="copyright">
+            © 2026 Tripora. All rights reserved.
+        </p>
+
+    </footer>
+
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
